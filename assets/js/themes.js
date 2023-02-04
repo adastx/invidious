@@ -38,7 +38,9 @@ addEventListener('storage', function (e) {
 addEventListener('DOMContentLoaded', function () {
     const prefTheme = document.getElementById('dark_mode_pref').textContent;
     if (prefTheme) {
-        setTheme(prefTheme);
-        helpers.storage.set(STORAGE_KEY_THEME, prefTheme);
+        setTheme(THEME_DARK);
+    } else {
+        setTheme(THEME_LIGHT);
     }
+    helpers.storage.set(STORAGE_KEY_THEME, prefTheme);
 });
